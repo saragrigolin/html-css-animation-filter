@@ -107,8 +107,8 @@
 /* Esercizio 10 */
 .ex-10-icon {
     font-size: 60px;
-    animation-duration: 1s;
     animation-name: rotate;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -122,9 +122,31 @@
     }
 }
 
+/* Esercizio 11 */
 .ex-11-icon {
     font-size: 60px;
 }
+
+.ex-11-icon:hover {
+    animation-name: partial-rotate;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+
+@keyframes partial-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 .ex-12-button, .ex-13-button {
     position: relative;
     display: block;
@@ -155,3 +177,118 @@
     height: 20px;
 }
 
+/* Esercizio 12 */
+.ex-12-button:hover .ex-12-top-white {
+    animation-name: animated-top-btn;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+
+@keyframes animated-top-btn {
+    0% {
+        left: 10%;
+    }
+
+    50% {
+        left: calc(90% - 60px);
+    }
+
+    100% {
+        left: 10%;
+    }
+}
+
+.ex-12-button:hover .ex-12-bottom-white {
+    animation-name: animated-bottom-btn;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+
+@keyframes animated-bottom-btn {
+    0% {
+        right: 20%;
+    }
+
+    50% {
+        right: calc(80% - 60px);
+    }
+
+    100% {
+        right: 20%;
+    }
+}
+
+/* Esercizio 13 */
+.ex-13-button:hover .ex-13-top-white {
+    animation: moving-top-btn 2s linear;
+}
+
+@keyframes moving-top-btn {
+    0% {
+        top: -10px;
+        left: 10%;
+    }
+
+    25% {
+        top: -10px;
+        left: calc(100% - 30px);
+    }
+
+    40% {
+        top: 100%;
+        left: calc(100% - 30px);
+    }
+
+    65% {
+        top: 100%;
+        left: 0;
+    }
+
+    85% {
+        top: -10px;
+        left: -20px;
+    }
+
+    100% {
+        top: -10px;
+        left: 10%;
+    }    
+}
+
+.ex-13-button:hover .ex-13-bottom-white {
+    animation: moving-bottom-btn 2s linear;
+}
+
+@keyframes moving-bottom-btn {
+    0% {
+        bottom: -10px;
+        right: 20%;
+    }
+
+    25% {
+        bottom: -10px;
+        right: calc(100% - 40px);
+        /* cambiato in 40px altrimenti usciva dal div .well */
+    }
+
+    40% {
+        bottom: 100%;
+        right: calc(100% - 40px);
+        /* cambiato in 40px altrimenti usciva dal div .well */
+    }
+
+    65% {
+        bottom: 100%;
+        right: 0;
+    }
+
+    85% {
+        bottom: -10px;
+        right: -20px;
+    }
+
+    100% {
+        bottom: -10px;
+        right: 20%;
+    }    
+}
